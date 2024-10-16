@@ -8,16 +8,16 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 public class MechanumDrive {
-    private final DcMotorEx fL;
-    private final DcMotorEx fR;
-    private final DcMotorEx bL;
-    private final DcMotorEx bR;
+    private final DcMotorV2 fL;
+    private final DcMotorV2 fR;
+    private final DcMotorV2 bL;
+    private final DcMotorV2 bR;
     private final Gamepad gamepad1;
     private final Gamepad gamepad2;
-    private final IMU imu;
+    private final IMUV2 imu;
     private final Telemetry telemetry;
 
-    public MechanumDrive(DcMotorEx fL, DcMotorEx fR, DcMotorEx bL, DcMotorEx bR, IMU imu, Gamepad gamepad1, Gamepad gamepad2, Telemetry telemetry) {
+    public MechanumDrive(DcMotorV2 fL, DcMotorV2 fR, DcMotorV2 bL, DcMotorV2 bR, IMUV2 imu, Gamepad gamepad1, Gamepad gamepad2, Telemetry telemetry) {
         this.fL = fL;
         this.fR = fR;
         this.bL = bL;
@@ -26,6 +26,22 @@ public class MechanumDrive {
         this.gamepad1 = gamepad1;
         this.gamepad2 = gamepad2;
         this.telemetry = telemetry;
+    }
+
+    public DcMotorV2 getFL() {
+        return fL;
+    }
+
+    public DcMotorV2 getFR() {
+        return fR;
+    }
+
+    public DcMotorV2 getBL() {
+        return bL;
+    }
+
+    public DcMotorV2 getBR() {
+        return bR;
     }
 
     public void drive(double x, double y, double rx){
