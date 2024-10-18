@@ -1,7 +1,5 @@
 package org.firstinspires.ftc.teamcode.hermes_helper.util;
 
-import androidx.annotation.Nullable;
-
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
@@ -13,25 +11,18 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.robotcore.external.navigation.Quaternion;
 import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
+import org.firstinspires.ftc.teamcode.hermes_helper.config.HermesConfig;
 
 public class IMUV2 implements IMU {
     private final IMU imu;
 
-    public IMUV2(String name, HardwareMap hardwareMap, @Nullable RevHubOrientationOnRobot.LogoFacingDirection logoFacingDirection, @Nullable RevHubOrientationOnRobot.UsbFacingDirection usbFacingDirection) {
+    public IMUV2(String name, HardwareMap hardwareMap) {
         this.imu = hardwareMap.get(IMU.class, name);
 
         IMU.Parameters parameters;
 
-        if(logoFacingDirection == null) {
-            logoFacingDirection = RevHubOrientationOnRobot.LogoFacingDirection.UP;
-        }
-
-        if(usbFacingDirection == null) {
-            usbFacingDirection = RevHubOrientationOnRobot.UsbFacingDirection.FORWARD;
-        }
-
         parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
-                logoFacingDirection, usbFacingDirection));
+                HermesConfig.IMU.LOGO_FACING_DIRECTION, HermesConfig.IMU.USB_FACING_DIRECTION));
 
         imu.initialize(parameters);
 

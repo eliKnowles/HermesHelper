@@ -1,12 +1,9 @@
 package org.firstinspires.ftc.teamcode.hermes_helper.util;
 
-import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.IMU;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 public class AutoMechanumDrive {
     private final MechanumDrive mechanumDrive;
@@ -16,7 +13,7 @@ public class AutoMechanumDrive {
         DcMotorV2 fR = new DcMotorV2(fRName, hardwareMap);
         DcMotorV2 bL = new DcMotorV2(bLName, hardwareMap);
         DcMotorV2 bR = new DcMotorV2(bRName, hardwareMap);
-        IMUV2 imu = new IMUV2(imuName, hardwareMap, null, null);
+        IMUV2 imu = new IMUV2(imuName, hardwareMap);
         this.mechanumDrive = new MechanumDrive(fL, fR, bL, bR, imu, gamepad1, gamepad2, telemetry);
     }
 
