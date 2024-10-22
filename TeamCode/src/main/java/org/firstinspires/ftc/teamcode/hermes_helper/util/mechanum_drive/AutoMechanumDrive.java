@@ -1,9 +1,11 @@
-package org.firstinspires.ftc.teamcode.hermes_helper.util;
+package org.firstinspires.ftc.teamcode.hermes_helper.util.mechanum_drive;
 
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.teamcode.hermes_helper.util.hardware.DcMotorV2;
+import org.firstinspires.ftc.teamcode.hermes_helper.util.hardware.IMUV2;
 
 public class AutoMechanumDrive {
     private final MechanumDrive mechanumDrive;

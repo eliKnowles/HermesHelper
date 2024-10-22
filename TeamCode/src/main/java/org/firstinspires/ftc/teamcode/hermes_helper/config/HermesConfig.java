@@ -12,4 +12,6 @@ public final class HermesConfig {
         public static final RevHubOrientationOnRobot.UsbFacingDirection USB_FACING_DIRECTION =
                 RevHubOrientationOnRobot.UsbFacingDirection.FORWARD;
     }
+
+
 }

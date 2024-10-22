@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.hermes_helper.util;
+package org.firstinspires.ftc.teamcode.hermes_helper.util.hardware;
 
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.HardwareMap;
