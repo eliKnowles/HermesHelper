@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.hermes_helper.config;
+package org.firstinspires.ftc.teamcode.hermeshelper.config;
 
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 

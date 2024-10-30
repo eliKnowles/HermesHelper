@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.hermes_helper.config;
+package org.firstinspires.ftc.teamcode.hermeshelper.config;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

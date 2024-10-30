@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.hermes_helper.util.hardware;
+package org.firstinspires.ftc.teamcode.hermeshelper.util.hardware;
 
 import androidx.annotation.NonNull;
 

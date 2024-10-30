@@ -1,11 +1,11 @@
-package org.firstinspires.ftc.teamcode.hermes_helper.util.mechanum_drive;
+package org.firstinspires.ftc.teamcode.hermeshelper.util.mechanum_drive;
 
 import com.qualcomm.robotcore.hardware.Gamepad;
 
-import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-import org.firstinspires.ftc.teamcode.hermes_helper.util.hardware.DcMotorV2;
-import org.firstinspires.ftc.teamcode.hermes_helper.util.hardware.IMUV2;
+import org.firstinspires.ftc.teamcode.hermeshelper.util.GlobalTelemetry;
+import org.firstinspires.ftc.teamcode.hermeshelper.util.hardware.DcMotorV2;
+import org.firstinspires.ftc.teamcode.hermeshelper.util.hardware.IMUV2;
 
 public class MechanumDrive {
     private final DcMotorV2 fL;
@@ -15,9 +15,8 @@ public class MechanumDrive {
     private final Gamepad gamepad1;
     private final Gamepad gamepad2;
     private final IMUV2 imu;
-    private final Telemetry telemetry;
 
-    public MechanumDrive(DcMotorV2 fL, DcMotorV2 fR, DcMotorV2 bL, DcMotorV2 bR, IMUV2 imu, Gamepad gamepad1, Gamepad gamepad2, Telemetry telemetry) {
+    public MechanumDrive(DcMotorV2 fL, DcMotorV2 fR, DcMotorV2 bL, DcMotorV2 bR, IMUV2 imu, Gamepad gamepad1, Gamepad gamepad2) {
         this.fL = fL;
         this.fR = fR;
         this.bL = bL;
@@ -25,8 +24,8 @@ public class MechanumDrive {
         this.imu = imu;
         this.gamepad1 = gamepad1;
         this.gamepad2 = gamepad2;
-        this.telemetry = telemetry;
     }
+
     public DcMotorV2 getFL() {
         return fL;
     }
@@ -73,8 +72,8 @@ public class MechanumDrive {
     public void fieldCentricDrive(double x, double y, double rx) {
         double botHeading = -imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.RADIANS);
 
-        telemetry.addData("bot heading: ", botHeading);
-        telemetry.update();
+        GlobalTelemetry.getTelemetry().addData("bot heading: ", botHeading);
+        GlobalTelemetry.getTelemetry().update();
 
         double rotX = x * Math.cos(-botHeading) - y * Math.sin(-botHeading);
         double rotY = x * Math.sin(-botHeading) + y * Math.cos(-botHeading);

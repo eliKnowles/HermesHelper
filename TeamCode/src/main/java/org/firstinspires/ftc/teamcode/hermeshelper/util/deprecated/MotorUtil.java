@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.hermes_helper.util.deprecated;
+package org.firstinspires.ftc.teamcode.hermeshelper.util.deprecated;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
