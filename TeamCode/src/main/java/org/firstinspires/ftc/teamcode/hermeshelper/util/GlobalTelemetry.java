@@ -18,7 +18,7 @@ public class GlobalTelemetry {
     }
 
     // Accessor for telemetry
-    public static Telemetry getTelemetry() {
+    public static Telemetry get() {
         return telemetryInstance;
     }
 }

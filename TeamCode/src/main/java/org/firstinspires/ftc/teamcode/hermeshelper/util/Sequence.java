@@ -12,10 +12,10 @@ public class Sequence {
     // Inner class to represent a command with its target, position, and delay
     private static class Command {
         Object target;
-        int position;
+        double position;
         int delay;
 
-        public Command(Object target, int position, int delay) {
+        public Command(Object target, double position, int delay) {
             this.target = target;
             this.position = position;
             this.delay = delay;
@@ -26,7 +26,7 @@ public class Sequence {
             if (target instanceof ServoV2) {
                 ((ServoV2) target).setPosition(position);
             } else if (target instanceof DcMotorV2) {
-                ((DcMotorV2) target).runToPosition(position);
+                ((DcMotorV2) target).runToPosition((int) position);
             }
             // Add handling for other types if needed
             try {
@@ -49,7 +49,7 @@ public class Sequence {
     }
 
     // Method to add a command to the current sequence
-    public Sequence add(Object target, int position, int delay) {
+    public Sequence add(Object target, double position, int delay) {
         if (currentSequence != null) {
             currentSequence.add(new Command(target, position, delay));
         }

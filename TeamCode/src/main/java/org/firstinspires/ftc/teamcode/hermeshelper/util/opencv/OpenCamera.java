@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode.hermeshelper.util.opencv;
 
-import com.qualcomm.robotcore.hardware.ColorRangeSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
@@ -18,7 +17,7 @@ public class OpenCamera {
 
         int cameraMonitorViewId = hardwareMap.appContext.getResources()
                 .getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
-        String webcamName = "Webcam 1"; // Replace with your actual webcam name in FTC config
+        String webcamName = "Webcam 1"; // TODO: Replace with your actual webcam name in FTC config
         camera = OpenCvCameraFactory.getInstance().createWebcam(hardwareMap.get(WebcamName.class, webcamName), cameraMonitorViewId);
 
         // Initialize the custom VisionPipeline class
@@ -35,8 +34,8 @@ public class OpenCamera {
 
             @Override
             public void onError(int errorCode) {
-                GlobalTelemetry.getTelemetry().addData("Camera Error", "Error code: " + errorCode);
-                GlobalTelemetry.getTelemetry().update();
+                GlobalTelemetry.get().addData("Camera Error", "Error code: " + errorCode);
+                GlobalTelemetry.get().update();
             }
         });
     }

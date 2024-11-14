@@ -2,10 +2,12 @@ package org.firstinspires.ftc.teamcode.hermeshelper.config;
 
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 
+import org.firstinspires.ftc.teamcode.hermeshelper.GoBildaPinpointDriver;
+
 @Config("IMU")
 public final class HermesConfig {
 
-    public static class IMU{
+    public static class IMU {
         public static final RevHubOrientationOnRobot.LogoFacingDirection LOGO_FACING_DIRECTION =
                 RevHubOrientationOnRobot.LogoFacingDirection.UP;
 
