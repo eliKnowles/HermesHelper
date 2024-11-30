@@ -6,13 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class GamepadControls {
+public final class GamepadControls {
     // Deadzone values for left and right sticks
     private final double L_STICK_DEADZONE = 0.1;
     private final double R_STICK_DEADZONE = 0.1;
 
-    private Map<String, String> gamepadOneControlDefinitions = new HashMap<>();
-    private Map<String, String> gamepadTwoControlDefinitions = new HashMap<>();
+    private final Map<String, String> gamepadOneControlDefinitions = new HashMap<>();
+    private final Map<String, String> gamepadTwoControlDefinitions = new HashMap<>();
 
     // Make sure to initialize for both gamepads
     public void InitControls(Gamepad gamepad) {
